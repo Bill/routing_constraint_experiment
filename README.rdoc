@@ -1,0 +1,16 @@
+== Advanced Constraints ==
+
+[Advanced Constraints](http://guides.rubyonrails.org/routing.html#advanced-constraints) are a way to execute arbitrary code (against the current request) and use the boolean result of that code to control flow in routes.rb
+
+This project defines two constraint classes: ConstraintApple and ConstraintOrange and uses them to activate/deactivate routes.
+
+To see it work, put this line in /etc/hosts:
+
+127.0.0.1 apple.paydici.local, orange.paydici.local
+
+Then try these two routes in your browser:
+
+http://apple.paydici.local:3000/foo
+http://orange.paydici.local:3000/foo
+
+The example uses request.subdomain (which is actually available directly in constraint clauses via e.g. { subdomain: 'apple'}) but we could do arbitrarily complex computation on the request as needed. Specifically we could grab the current_company code out of ApplicationController and use that.
