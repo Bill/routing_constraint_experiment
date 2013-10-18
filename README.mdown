@@ -1,4 +1,5 @@
-== Advanced Constraints ==
+Advanced Constraints
+====================
 
 [Advanced Constraints](http://guides.rubyonrails.org/routing.html#advanced-constraints) are a way to execute arbitrary code (against the current request) and use the boolean result of that code to control flow in routes.rb
 
